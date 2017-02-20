@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cat avatar generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-ca" />
+<link rel="Shortcut Icon" href="favicon.png" type="image/x-icon" />
+
+<style type="text/css" media="screen">
+body { margin: 2em; padding: 0; background: #000; color: #666; font-size: .8rem; text-align: center; }
+#wrapper { text-align: left; background: #fff; max-width: 300px; padding: 1rem;    margin: 0 auto; border: 1em #333 solid; text-align: center; }
+h1 { font-variant: small-caps; color: hotpink; font-size: 1.8rem; font-family: Ubuntu, Arial, sans; font-weight: bold; margin: 0 0 0.3rem 0; }
+
+
+.card {
+  display: flex;
+  align-items: baseline;
+}
+.small { 50%; overflow: hidden; width: 2.5em; height: 2.5em;}
+
+
+.avatar { display: block;
+          transition: transform 0.15s ease-in-out;
+          transform: scale(0.8);
+         }
+.avatar.inline { display: inline-block; }
+.avatar.loaded { transform: scale(1.0); }
+
+#main-avatar > img {
+  z-index: 10;
+}
+#main-avatar.loaded.shadow:after {
+  display: block;
+  content: ' ';
+  z-index: 5;
+  width: 50%;
+  height: inherit;
+  margin: 0px auto;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.58);
+  transform: translate(0,-5px);
+}
+
+a { color: #00aad4;}
+a:hover {    color: #222;}
+.smallbutton { font-size: 1rem; margin-bottom: 0.8rem; }
+
+input[type=text]{width:90%}
+.bigbutton { font-weight: bold; font-size: 1.3rem; margin-bottom: 1.3rem; }
+
+@media (max-width: 500px) {
+  body { margin: 0; padding: 0; background: #FFF; font-size: 1rem; }
+  #wrapper { text-align: left; background: #fff; max-width: 100%; padding: 0; margin: 0 auto; border: none; text-align: center; }
+  h1 { font-size: 1.6rem; margin: 0.2rem 0 0.2rem 0; }
+}
+</style>
+</head>
+<body>
+
+
+<div id="wrapper">
+
+  <h1>Cat avatar generator</h1>
+
+  <div class="avatar shadow" id="main-avatar">
+    <img alt="Avatar profile">
+  </div>
+
+  <form onSubmit="return onSubmit()">
+    <br/>
+    <br/>
+    Your name?*<br/>
+    <input class="smallbutton" type="text" name="seed" id="name" value="linux" autofocus />
+    <input class="bigbutton" type="submit" value="Generate new cat" />
+  </form>
+
+  <br/>
+  <em>(* empty=random)</em><br/><br/>
+    Artworks: CC-By David Revoy
+    <div class="avatar inline shadow" data-seed="David Revoy">
+      <img alt="Avatar2" class="small">
+    </div>
+    <a href="http://www.peppercarrot.com" title="my webcomic">[site]</a>
+  <br/>
+    Code: CC-By Andreas Gohr
+    <a href="https://www.splitbrain.org/blog/2007-01/20_monsterid_as_gravatar_fallback" title="original author">[site]</a>
+    <div class="avatar inline shadow" data-seed="Andreas Gohr">
+      <img alt="Avatar Image" class="small">
+    </div>
+    Javascript version by barrabinfc
+    <a href="github.com/barrabinfc" title="javascript author">[site]</a>
+    <div class="avatar inline shadow" data-seed="barrabinfc">
+      <img alt="Avatar Image" class="small">
+    </div>
+
+  <br/>
+  <a href="2016_cat-generator.zip" title="original author">[Zip sources and artwork]</a>
+
+</div>
+<script src="/cat-generator.js"></script>
+<script>
+  let options = {seed: 'linux', selector: '.avatar'};
+  var cat = new Meowatar(options);
+
+  function onSubmit( ev ){
+
+    let username = document.querySelector('input[name="seed"]').value
+    cat.draw( username || undefined ,  document.querySelector('#main-avatar') )
+
+    return false;
+  }
+</script>
+
+</body>
+</html>
