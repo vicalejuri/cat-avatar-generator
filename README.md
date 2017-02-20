@@ -5,21 +5,40 @@ Cat-Avatar-Generator
 
 A generator of cats pictures optimised to generate or random avatars, or defined avatar from a "seed". A derivation by [David Revoy](http://www.peppercarrot.com) from the original [MonsterID by Andreas Gohr's](https://www.splitbrain.org/blog/2007-01/20_monsterid_as_gravatar_fallback).
 
+This repository also includes a pure javascript(no jquery,ES6) version, for you folks who don't have access to a PHP enabled server.
+
 ## License:
 
 **Artworks:**
 PNG and ORA files licensed under: [CC-By 4.0](https://creativecommons.org/licenses/by/4.0/) attribution: David Revoy with the following exception: Generated cats used as Avatar (for blog,forum,social-network) don't need direct attribution and so, can be used as regular avatars without pasting David Revoy's name all over the place.
 
 **Code**
-This PHP is licensed under the short and simple permissive:
+This PHP/Javascript is licensed under the short and simple permissive:
 [MIT License](https://en.wikipedia.org/wiki/MIT_License)
  
 ## Usage:
 
-Call the script this way: 
+Using PHP, call the script this way: 
 ```
 echo '<img height="70px" width="70px" src="your/path/to/cat-avatar-generator?seed='.$var.'"/>';
 ```
+
+Using pure Javascript, use it like this:
+
+```
+   <div class="avatar" data-seed="myusername">
+         <img alt="myusername" class="small">
+   </div>
+   <div class="avatar" data-seed="otherusername">
+         <img alt="otherusername" class="big">
+   </div>
+
+   <script src="/cat-generator.js"></script>
+   <script>
+     var cat = new Meowatar({selector: '.avatar', assets_path: 'http://github.io/barrabinfc/cat-avatar-generator/avatars/'})
+   </script>
+```
+
 _(Note: for the seed, I advice to use author's name to not expose email or sensitive datas, even hashed on a public code.)_
 
 ## How to edit artworks

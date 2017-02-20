@@ -31,11 +31,11 @@ let fromPairs = (pairsArr) => {
  *
  * Usage:
  *
- *  <div class="avatar" data-seed="myusername@gmail.com">
- *        <img alt="myusername@gmail.com" class="small">
+ *  <div class="avatar" data-seed="myusername">
+ *        <img alt="myusername" class="small">
  *  </div>
- *  <div class="avatar" data-seed="otherusername@gmail.com">
- *        <img alt="otherusername@gmail.com" class="big">
+ *  <div class="avatar" data-seed="otherusername">
+ *        <img alt="otherusername" class="big">
  *  </div>
  *  <script>
  *    var cat = new Meowatar({selector: '.avatar'})
