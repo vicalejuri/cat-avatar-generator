@@ -7,6 +7,8 @@ A generator of cats pictures optimised to generate or random avatars, or defined
 
 This repository also includes a pure javascript(no jquery,ES6) version, for you folks who don't have access to a PHP enabled server.
 
+[**Demo**](https://barrabinfc.github.io/cat-avatar-generator/)
+
 ## License:
 
 **Artworks:**
@@ -15,10 +17,10 @@ PNG and ORA files licensed under: [CC-By 4.0](https://creativecommons.org/licens
 **Code**
 This PHP/Javascript is licensed under the short and simple permissive:
 [MIT License](https://en.wikipedia.org/wiki/MIT_License)
- 
+
 ## Usage:
 
-Using PHP, call the script this way: 
+Using PHP, call the script this way:
 ```
 echo '<img height="70px" width="70px" src="your/path/to/cat-avatar-generator?seed='.$var.'"/>';
 ```
@@ -35,7 +37,7 @@ Using pure Javascript, use it like this:
 
    <script src="/cat-generator.js"></script>
    <script>
-     var cat = new Meowatar({selector: '.avatar', assets_path: 'http://github.io/barrabinfc/cat-avatar-generator/avatars/'})
+     var cat = new Meowatar({selector: '.avatar', assets_path: 'https://barrabinfc.github.io/cat-avatar-generator/avatars/'})
    </script>
 ```
 
@@ -47,6 +49,6 @@ _(Note: for the seed, I advice to use author's name to not expose email or sensi
 2. Open it again in Gimp 2.8, with the [export layer plugin](https://github.com/khalim19/gimp-plugin-export-layers/releases/download/2.4/export-layers-2.4.zip)
 3. Scale the image down to the result you want (eg. 256px x 256px as on the demo ) LancZos filter
 3. File > Export layer (Allow invisible layer to be exported, check 'image size', PNG file format )
-4. Done. 
+4. Done.
 
 All PNG files of 'parts' are extracted this way and keep their layer name.
