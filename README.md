@@ -37,7 +37,7 @@ Using pure Javascript, use it like this:
 
    <script src="/cat-generator.js"></script>
    <script>
-     var cat = new Meowatar({selector: '.avatar', assets_path: 'https://barrabinfc.github.io/cat-avatar-generator/avatars/'})
+     var cat = new Meowatar({selector: '.avatar', assets_path: 'https:/your/path/to/cat-avatar-generator/avatars/'})
    </script>
 ```
 
