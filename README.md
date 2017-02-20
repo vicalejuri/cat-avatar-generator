@@ -25,7 +25,7 @@ Using PHP, call the script this way:
 echo '<img height="70px" width="70px" src="your/path/to/cat-avatar-generator?seed='.$var.'"/>';
 ```
 
-Using pure Javascript, use it like this:
+In pure Javascript, use it like this:
 
 ```
    <div class="avatar" data-seed="myusername">
